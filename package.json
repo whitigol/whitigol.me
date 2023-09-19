@@ -2,7 +2,7 @@
     "name": "whitigol.me",
     "version": "0.1.0",
     "private": true,
-    "packageManager": "^yarn@1.22.19",
+    "packageManager": "yarn@3.6.3",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
