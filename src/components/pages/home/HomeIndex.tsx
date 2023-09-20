@@ -8,7 +8,6 @@ import { useScrollIntoView } from '@mantine/hooks';
 import { IconArrowRight, IconChevronDown, IconRocket, IconTools } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function HomeIndex() {
     const { scrollIntoView, targetRef } = useScrollIntoView({
@@ -114,7 +113,7 @@ export default function HomeIndex() {
                                             width={1920}
                                             height={1080}
                                             alt={project.name}
-                                            className="h-auto w-full"
+                                            className="h-auto w-full rounded-md"
                                         />
                                         <Divider />
                                         <h1 className="text-xl font-bold">{project.name}</h1>
