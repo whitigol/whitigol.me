@@ -72,7 +72,7 @@ export default function HomeIndex() {
                         {"I'm"} always learning new things and trying to improve my skills.
                     </span>
                     {/* Grid of icons that are 100px in size */}
-                    <div className="mb-5 mt-5 grid grid-cols-8 gap-5">
+                    <div className="mb-5 mt-5 grid grid-cols-4 gap-5 sm:grid-cols-5 md:grid-cols-8 lg:grid-cols-8">
                         {toolbelt.map((tool, i) => (
                             <div className="flex items-center justify-center" key={i}>
                                 <Tooltip key={i} label={tool.name}>
