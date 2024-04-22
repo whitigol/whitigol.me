@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import plugin_animate from "tailwindcss-animate";
 export default {
 	darkMode: ["class"],
 	content: [
@@ -18,6 +19,15 @@ export default {
 			},
 		},
 		extend: {
+			fontFamily: {
+				whitigol: ["Whitigol", "sans-serif"],
+			},
+			minHeight: {
+				"screen-full": "calc(100vh - 3.5rem)",
+			},
+			height: {
+				"screen-full": "calc(100vh - 3.5rem)",
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -74,5 +84,5 @@ export default {
 			},
 		},
 	},
-	plugins: [import("tailwindcss-animate")],
+	plugins: [plugin_animate],
 };

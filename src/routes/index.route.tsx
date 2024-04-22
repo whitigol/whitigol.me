@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
 	return (
-		<div className="w-full h-screen flex justify-center items-center">
+		<div className="def flex w-full items-center justify-center">
 			<Card>
 				<CardHeader>
 					<CardTitle>Coming Soon</CardTitle>
