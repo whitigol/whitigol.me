@@ -73,4 +73,21 @@
 	body {
 		@apply bg-background text-foreground;
 	}
+	.def {
+		@apply mt-14 min-h-[calc(100vh-3.5rem)];
+	}
+}
+
+@font-face {
+	font-family: "Whitigol";
+	src: url("/fonts/font.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Whitigol";
+	src: url("/fonts/font_i.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
 }

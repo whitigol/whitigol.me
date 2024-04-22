@@ -1,3 +1,4 @@
+import { TooltipProvider } from "../ui/tooltip";
 import ThemeProvider from "./ThemeProvider";
 
 interface Props {
@@ -7,8 +8,10 @@ interface Props {
 export default function Providers(props: Props) {
 	return (
 		<>
-			<ThemeProvider />
-			<>{props.children}</>
+			<TooltipProvider>
+				<ThemeProvider />
+				<>{props.children}</>
+			</TooltipProvider>
 		</>
 	);
 }
