@@ -1,3 +1,5 @@
-# [My Portfolio](https://www.whitigol.me/)
+# [whitigol.me](https://whitigol.me/)
 
-This is my portfolio project. It's a simple website that showcases my projects and skills.
+This is the second version of my portfolio.
+
+Made with Vite, React, TypeScript, TailwindCSS, and hosted on Cloudflare Pages.
