@@ -1,9 +1,16 @@
+import { Button } from "@/components/ui/button";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { IconBrandTypescript, IconHeart } from "@tabler/icons-react";
+import {
+	IconBrandGithub,
+	IconBrandTwitter,
+	IconBrandTypescript,
+	IconExternalLink,
+	IconHeart,
+} from "@tabler/icons-react";
 
 export default function LayoutFooter() {
 	// The footer should have copyright information, as well as links to various places
@@ -17,8 +24,7 @@ export default function LayoutFooter() {
 					© {new Date().getFullYear()} Whitigol. All Rights Reserved.
 				</p>
 				<div className="flex flex-row items-center gap-1 text-muted-foreground">
-					Made with <IconHeart className="size-4 text-rose-500/60" />{" "}
-					&
+					Made with <IconHeart className="size-4 text-rose-500/60" /> &
 					<Tooltip>
 						<TooltipTrigger>
 							<IconBrandTypescript className="size-4 text-blue-500/60" />
@@ -32,12 +38,16 @@ export default function LayoutFooter() {
 				<h2 className="font-whitigol text-xl font-bold">Links</h2>
 				<ul className="text-sm">
 					<li>
-						<a href="https://github.com/WhitigolProd">My GitHub</a>
+						<FooterLink href="https://github.com/WhitigolProd">
+							<IconBrandGithub className="size-4" />
+							<span>GitHub</span>
+						</FooterLink>
 					</li>
 					<li>
-						<a href="https://bigdaddyscripts.com/">
-							Big Daddy Scripts
-						</a>
+						<FooterLink href="https://bigdaddyscripts.com">
+							<IconExternalLink className="size-4" />
+							<span>Big Daddy Scripts</span>
+						</FooterLink>
 					</li>
 				</ul>
 			</div>
@@ -45,10 +55,27 @@ export default function LayoutFooter() {
 				<h2 className="font-whitigol text-xl font-bold">Socials</h2>
 				<ul className="text-sm">
 					<li>
-						<a href="https://twitter.com/whitigol">Twitter</a>
+						<FooterLink href="https://twitter.com/whitigol">
+							<IconBrandTwitter className="size-4" />
+							<span>Twitter</span>
+						</FooterLink>
 					</li>
 				</ul>
 			</div>
 		</div>
+	);
+}
+
+interface FooterLinkProps {
+	children: React.ReactNode;
+	href: string;
+}
+function FooterLink(props: FooterLinkProps) {
+	return (
+		<a href={props.href} target="_blank" rel="noopener noreferrer">
+			<Button variant="link" className="flex h-fit items-center gap-1 p-0">
+				{props.children}
+			</Button>
+		</a>
 	);
 }
