@@ -83,7 +83,7 @@ function ProjectsIndex() {
 					]}
 				/>
 			</div>
-			<div className="mt-10 flex flex-row items-center gap-1 text-muted-foreground">
+			<div className="my-10 flex flex-col items-center gap-1 text-muted-foreground md:flex-row">
 				<span>This isn't all of my projects. Check out my</span>
 				<a
 					href="https://github.com/WhitigolProd"
@@ -92,10 +92,9 @@ function ProjectsIndex() {
 				>
 					<Button className="flex items-center gap-1 p-0" variant="link">
 						<IconBrandGithub className="size-4" />
-						<span className="text-sm">GitHub</span>
+						<span className="text-sm">GitHub for More!</span>
 					</Button>
 				</a>
-				<span>for more.</span>
 			</div>
 		</div>
 	);
