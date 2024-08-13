@@ -27,7 +27,7 @@ export default function LayoutHeader() {
 		<div className="container flex flex-row items-center justify-between">
 			<Link to="/" className="flex flex-row items-center gap-2">
 				<img src="/logo.png" alt="Whitigol's Logo" className="size-10" />
-				<h1 className="font-whitigol text-2xl font-bold text-white">
+				<h1 className="font-whitigol text-2xl font-bold text-foreground">
 					Whitigol's Portfolio
 				</h1>
 			</Link>
@@ -36,7 +36,7 @@ export default function LayoutHeader() {
 					<Link
 						key={link.name}
 						to={link.path}
-						className={`font-whitigol text-white ${
+						className={`font-whitigol text-foreground ${
 							pathname === link.path ? "underline" : ""
 						}`}
 					>
@@ -67,7 +67,7 @@ export default function LayoutHeader() {
 								<Link
 									key={link.name}
 									to={link.path}
-									className={`font-whitigol text-white decoration-transparent ${
+									className={`font-whitigol text-foreground decoration-transparent ${
 										pathname === link.path ? "underline" : ""
 									}`}
 								>
