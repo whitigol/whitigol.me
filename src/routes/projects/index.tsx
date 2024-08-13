@@ -6,7 +6,12 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { IconBrandGithub, IconDownload } from "@tabler/icons-react";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { IconBrandGithub, IconDownload, IconWorld } from "@tabler/icons-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects/")({
@@ -34,6 +39,17 @@ function ProjectsIndex() {
 								</div>
 							),
 							url: "https://github.com/WhitigolSoftware/wLauncher/releases/latest/download/wLauncher.exe",
+						},
+						{
+							children: (
+								<div className="flex items-center gap-2">
+									<IconWorld className="size-4" />
+									<span className="text-sm">Website</span>
+								</div>
+							),
+							url: "https://launcher.whitigol.me",
+							disable: true,
+							disabledMessage: "Website coming soon!",
 						},
 					]}
 				/>
@@ -106,6 +122,8 @@ interface ProjectProps {
 	links?: {
 		children: React.ReactNode;
 		url: string;
+		disable?: boolean;
+		disabledMessage?: string;
 	}[];
 }
 function Project(props: ProjectProps) {
@@ -120,11 +138,34 @@ function Project(props: ProjectProps) {
 				{props.links && (
 					<div className="flex flex-row items-center justify-center gap-2">
 						{props.links.map((link, index) => (
-							<Button key={index} className="w-full" asChild variant="default">
-								<a href={link.url} target="_blank">
-									{link.children}
-								</a>
-							</Button>
+							<Tooltip>
+								<TooltipTrigger>
+									<Button
+										key={index}
+										className={`w-full ${link.disable && "opacity-50"}`}
+										asChild
+										variant="default"
+										disabled
+									>
+										{link.disable ? (
+											<span>{link.children}</span>
+										) : (
+											<a
+												href={link.url}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{link.children}
+											</a>
+										)}
+									</Button>
+								</TooltipTrigger>
+								{link.disable && (
+									<TooltipContent>
+										{link.disabledMessage || "This link is disabled."}
+									</TooltipContent>
+								)}
+							</Tooltip>
 						))}
 					</div>
 				)}
