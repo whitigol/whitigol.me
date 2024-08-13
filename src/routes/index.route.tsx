@@ -150,7 +150,7 @@ function Index() {
 	return (
 		<div className="mb-16 flex flex-col gap-8">
 			<header className="mt-16">
-				<h1 className="text-5xl font-bold text-white">
+				<h1 className="text-5xl font-bold text-foreground">
 					Hi, I'm <span className="font-whitigol">Whitigol</span>
 				</h1>
 				<p className="mt-4 text-muted-foreground">
@@ -164,7 +164,7 @@ function Index() {
 			</header>
 
 			<section>
-				<h2 className="text-3xl font-semibold text-white">About Me</h2>
+				<h2 className="text-3xl font-semibold text-foreground">About Me</h2>
 				<p className="mt-2 text-muted-foreground">
 					With a strong foundation in frontend development and a growing
 					interest in backend technologies, I am dedicated to continuous
@@ -214,7 +214,7 @@ function Index() {
 			</section>
 
 			<section>
-				<h2 className="text-3xl font-semibold text-white">Projects</h2>
+				<h2 className="text-3xl font-semibold text-foreground">Projects</h2>
 				<div className="mt-4">
 					<Link to="/projects">
 						<Button>View All Projects</Button>
@@ -223,7 +223,7 @@ function Index() {
 			</section>
 
 			<section>
-				<h2 className="text-3xl font-semibold text-white">Contact</h2>
+				<h2 className="text-3xl font-semibold text-foreground">Contact</h2>
 				<p className="mt-2 text-muted-foreground">
 					I'm always open to discussing new projects, creative ideas, or
 					opportunities to be part of your vision. Feel free to reach out to me
