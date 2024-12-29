@@ -102,7 +102,7 @@ function ProjectsIndex() {
 			<div className="my-10 flex flex-col items-center gap-1 text-muted-foreground md:flex-row">
 				<span>This isn't all of my projects. Check out my</span>
 				<a
-					href="https://github.com/WhitigolProd"
+					href="https://github.com/whitigol"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

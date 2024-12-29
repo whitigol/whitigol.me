@@ -237,7 +237,7 @@ function Index() {
 						</Button>
 					</a>
 					<a
-						href="https://github.com/WhitigolProd"
+						href="https://github.com/whitigol"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

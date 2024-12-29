@@ -38,7 +38,7 @@ export default function LayoutFooter() {
 				<h2 className="font-whitigol text-xl font-bold">Links</h2>
 				<ul className="text-sm">
 					<li>
-						<FooterLink href="https://github.com/WhitigolProd">
+						<FooterLink href="https://github.com/whitigol">
 							<IconBrandGithub className="size-4" />
 							<span>GitHub</span>
 						</FooterLink>
