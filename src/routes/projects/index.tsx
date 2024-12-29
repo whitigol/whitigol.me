@@ -11,7 +11,12 @@ import {
 	TooltipContent,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { IconBrandGithub, IconDownload, IconWorld } from "@tabler/icons-react";
+import {
+	IconBrandGithub,
+	IconDownload,
+	IconShoppingCart,
+	IconWorld,
+} from "@tabler/icons-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projects/")({
@@ -25,11 +30,40 @@ function ProjectsIndex() {
 			{/* Grid */}
 			<div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 				<Project
+					name="DevMate"
+					// description="DevMate is a versatile FiveM development tool designed to simplify resource creation, streamline server management, provides user-friendly tools for efficient debugging, and more."
+					description={
+						<div className="flex flex-col">
+							<span>
+								DevMate is a versatile FiveM development tool designed to
+								simplify resource creation, streamline server management,
+								provides user-friendly tools for efficient debugging, and more.
+							</span>
+							<span className="mt-4">Created by Whitigol & TheLaw97</span>
+							<span>Selling platform provided by Big Daddy Scripts</span>
+						</div>
+					}
+					links={[
+						{
+							children: (
+								<div className="flex items-center gap-1">
+									<IconShoppingCart className="size-4" />
+									<span className="text-sm">Purchase</span>
+								</div>
+							),
+							url: "https://bigdaddyscripts.com/Products/View/2586/DevMate",
+							disable: false,
+							disabledMessage: "Coming January 1st, 2025!",
+						},
+					]}
+				/>
+				<Project
 					name="wLauncher"
 					// FiveM Launcher
-					description={
-						"wLauncher is a windows launcher for FiveM. wLauncher allows you to launch into your favorite FiveM servers from your Windows PC without ever having to worry about changing your nickname in-between servers."
-					}
+					description="wLauncher is a windows launcher for FiveM. wLauncher allows you
+								to launch into your favorite FiveM servers from your Windows PC
+								without ever having to worry about changing your nickname
+								in-between servers."
 					links={[
 						{
 							children: (
@@ -118,7 +152,7 @@ function ProjectsIndex() {
 
 interface ProjectProps {
 	name: string;
-	description: string;
+	description: string | React.ReactNode;
 	links?: {
 		children: React.ReactNode;
 		url: string;
@@ -160,7 +194,7 @@ function Project(props: ProjectProps) {
 										)}
 									</Button>
 								</TooltipTrigger>
-								{link.disable && (
+								{(link.disable || (!link.disable && link.disabledMessage)) && (
 									<TooltipContent>
 										{link.disabledMessage || "This link is disabled."}
 									</TooltipContent>
